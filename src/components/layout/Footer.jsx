@@ -1,7 +1,20 @@
+/**
+ * Footer component for site-wide footer content
+ * 
+ * This component provides the main site footer with links,
+ * contact information, and social media links.
+ */
+
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Footer() {
+/**
+ * Footer Component
+ * 
+ * @param {Object} props - Component props
+ * @param {string} [props.className] - Additional CSS classes
+ */
+export function Footer({ className = "" }) {
   const linkClass =
     "xl:text-base text-sm text-black block whitespace-nowrap text-opacity-70 hover:text-opacity-100 focus:outline-none decoration-from-font underline-offset-4 focus:text-opacity-100";
 
@@ -49,8 +62,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="text-black bg-[url('/footer.dbe7db48d54962232591.jpg')] bg-no-repeat bg-cover bg-right-bottom pt-10 pb-10 border-t border-opacity-10 border-gray">
-      <div className=" max-w-screen-lg w-container mx-auto px-3 pt-10 pb-10">
+    <footer className={`text-black bg-[url('/footer.dbe7db48d54962232591.jpg')] bg-no-repeat bg-cover bg-right-bottom pt-10 pb-10 border-t border-opacity-10 border-gray ${className}`}>
+      <div className="max-w-screen-lg w-container mx-auto px-3 pt-10 pb-10">
         <div>
           <Link href="/">
             <Image
@@ -102,3 +115,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default Footer;
