@@ -55,65 +55,52 @@ export function AutoMotiveDesktop({ videoData }) {
 
       {/* Desktop Layout */}
       <div className="hidden lg:grid grid-cols-[35%_65%] relative">
-        {/* Animated Left Panel */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeVehicle}
-            initial={{ opacity: 0, scale: 0.95, y: 40 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -40 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="pl-14 self-center ml-[15%] relative 2xl:ml-[25%] 2xl:py-10 py-5 flex flex-col"
+     
+        <div className="cards-wrp pl-14 self-cente ml-[15%] relative 2xl:ml-[25%] 2xl:py-10 py-5 flex flex-col ">
+          <button
+            type="button"
+            onClick={() => {
+              setActiveVehicle("passenger");
+              setActiveControl(0);
+            }}
+            className={`text-left mb-14 transition-opacity duration-300 ${
+              activeVehicle === "passenger" ? "opacity-100" : "opacity-20"
+            }`}
           >
-            <button
-              type="button"
-              onClick={() => {
-                setActiveVehicle("passenger");
-                setActiveControl(0);
+            <h3 className="font-medium text-left pb-2">Passenger vehicles</h3>
+            <h6 className="font-light text-left 2xl:text-lg">
+              Revving up innovation from <br /> interior to exterior.
+            </h6>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              setActiveVehicle("commercial");
+              setActiveControl(0);
+            }}
+            className={`text-left transition-opacity duration-300 ${
+              activeVehicle === "commercial" ? "opacity-100" : "opacity-20"
+            }`}
+          >
+            <h3 className="font-medium text-left pb-2">Commercial vehicles</h3>
+            <h6 className="font-light text-left 2xl:text-lg">
+              Advancing engineering <br /> for heavy-duty vehicles.
+            </h6>
+          </button>
+          <div className="absolute left-0 h-full w-[2px] rounded-md bg-gray-600 top-0">
+            <div
+              className="w-[2px] bg-white rounded-md transition-all duration-500"
+              style={{
+                height: "50%",
+                transform: `translateY(${
+                  activeVehicle === "passenger" ? "0%" : "100%"
+                })`,
               }}
-              className={`text-left mb-14 transition-opacity duration-300 ${
-                activeVehicle === "passenger" ? "opacity-100" : "opacity-20"
-              }`}
-            >
-              <h3 className="font-medium text-left pb-2">Passenger vehicles</h3>
-              <h6 className="font-light text-left 2xl:text-lg">
-                Revving up innovation from <br /> interior to exterior.
-              </h6>
-            </button>
+            />
+          </div>
+        </div>
 
-            <button
-              type="button"
-              onClick={() => {
-                setActiveVehicle("commercial");
-                setActiveControl(0);
-              }}
-              className={`text-left transition-opacity duration-300 ${
-                activeVehicle === "commercial" ? "opacity-100" : "opacity-20"
-              }`}
-            >
-              <h3 className="font-medium text-left pb-2">
-                Commercial vehicles
-              </h3>
-              <h6 className="font-light text-left 2xl:text-lg">
-                Advancing engineering <br /> for heavy-duty vehicles.
-              </h6>
-            </button>
-
-            <div className="absolute left-0 h-full w-[2px] rounded-md bg-gray-600 top-0">
-              <div
-                className="w-[2px] bg-white rounded-md transition-all duration-500"
-                style={{
-                  height: "50%",
-                  transform: `translateY(${
-                    activeVehicle === "passenger" ? "0%" : "100%"
-                  })`,
-                }}
-              />
-            </div>
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Animated Video Section */}
         <div className="relative flex items-center">
           <AnimatePresence mode="wait">
             <motion.div
