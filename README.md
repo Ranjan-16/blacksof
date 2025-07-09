@@ -1,36 +1,323 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Blacksof - Automotive Solutions Website
 
-## Getting Started
+[![Next.js](https://img.shields.io/badge/Next.js-15.3.5-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.0.0-blue)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC)](https://tailwindcss.com/)
+[![Performance](https://img.shields.io/badge/Performance-Optimized-green)](https://web.dev/measure/)
 
-First, run the development server:
+A modern, high-performance automotive solutions website showcasing advanced NVH (Noise, Vibration, and Harshness) solutions and soft trims for seamless vehicle experiences.
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18+
+- npm, yarn, or pnpm
+
+### Installation & Development
 
 ```bash
+# Clone the repository
+git clone [repository-url]
+cd blacksof
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Build for production
+npm run build
 
-## Learn More
+# Start production server
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── globals.css         # Global styles
+│   ├── layout.js          # Root layout
+│   └── page.js            # Home page
+├── components/            # React components
+│   ├── common/           # Shared components
+│   ├── forms/            # Form components
+│   ├── layout/           # Layout components
+│   ├── sections/         # Page sections
+│   └── ui/               # UI primitives
+└── hooks/                # Custom React hooks
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎯 Key Features
 
-## Deploy on Vercel
+### 🎬 Interactive Video Showcase
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Hero Video Background**: Full-screen automotive video with overlay
+- **Product Carousels**: Interactive video carousels for vehicle demonstrations
+- **Lazy Loading**: Videos load only when in viewport for optimal performance
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### ⚡ Performance Optimized
+
+- **Core Web Vitals**: Optimized for LCP, FID, and CLS
+- **Code Splitting**: Vendor and component-specific chunks
+- **Image Optimization**: WebP/AVIF formats with responsive sizing
+- **Resource Hints**: Preloading and prefetching for critical assets
+
+### 📱 Responsive Design
+
+- **Mobile-First**: Optimized for all device sizes
+- **Touch-Friendly**: Swiper-based carousels with touch support
+- **Adaptive Layout**: Different layouts for mobile and desktop
+
+### 🎨 Modern UI/UX
+
+- **Smooth Animations**: CSS-based animations with hardware acceleration
+- **Scroll Effects**: Header hide/show on scroll with backdrop blur
+- **Interactive Elements**: Hover states and loading animations
+
+## 🛠️ Technology Stack
+
+### Core Technologies
+
+- **Next.js 15.3.5**: React framework with App Router
+- **React 19**: Latest React with concurrent features
+- **Tailwind CSS 4**: Utility-first CSS framework
+
+### Key Dependencies
+
+- **Swiper 11.2.10**: Touch slider for carousels
+- **Lucide React**: Modern icon library
+- **Framer Motion**: Animation library (legacy support)
+
+### Development Tools
+
+- **ESLint**: Code linting and quality
+- **Tailwind CSS**: Utility-first styling
+- **PostCSS**: CSS processing
+
+## 🧩 Component Architecture
+
+### Layout Components
+
+- **Header**: Responsive navigation with scroll behavior
+- **Footer**: Company information and links
+- **Layout**: Root layout with metadata
+
+### Section Components
+
+- **HeroVideoSection**: Full-screen video background
+- **AutomotiveSection**: Interactive product showcase
+- **ContactSection**: Professional contact form
+
+### UI Components
+
+- **Button**: Memoized button with variants
+- **Input/TextArea**: Form input components
+- **Carousel**: Performance-optimized video carousel
+
+## ⚙️ Configuration
+
+### Next.js Configuration (`next.config.js`)
+
+```javascript
+{
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ["swiper", "lucide-react"]
+  },
+  images: {
+    formats: ["image/webp", "image/avif"],
+    minimumCacheTTL: 31536000
+  },
+  output: "standalone",
+  reactStrictMode: true
+}
+```
+
+### Tailwind Configuration
+
+- **Content Paths**: App, components, and pages
+- **Responsive Design**: Mobile-first breakpoints
+- **Custom Utilities**: Project-specific classes
+
+## 🎨 Styling System
+
+### Design Tokens
+
+```css
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-blue: #006cbc;
+}
+```
+
+### Typography
+
+- **Font Family**: Geist (Google Fonts)
+- **Font Weights**: 100-900 variable
+- **Font Display**: swap for performance
+
+### Animations
+
+- **Fade In**: Custom CSS keyframes
+- **Scroll Animations**: Intersection Observer
+- **Hardware Acceleration**: transform3d optimizations
+
+## 📊 Performance Features
+
+### Loading Optimizations
+
+- **Critical Resource Preloading**: Logo and hero video
+- **DNS Prefetching**: External resources
+- **Lazy Loading**: On-demand asset loading
+- **Image Optimization**: Modern formats
+
+### Runtime Optimizations
+
+- **Component Memoization**: React.memo usage
+- **Hook Optimization**: useMemo and useCallback
+- **Scroll Throttling**: requestAnimationFrame
+- **Bundle Splitting**: Optimized chunks
+
+### Caching Strategy
+
+- **Static Assets**: Long-term caching
+- **Videos**: Optimized video delivery
+- **Fonts**: Preconnect and prefetch
+
+## 🔧 Development Guidelines
+
+### Code Standards
+
+- **ESLint**: Enforced code quality
+- **Component Naming**: PascalCase for components
+- **File Organization**: Feature-based structure
+- **Performance**: Memoization best practices
+
+### Git Workflow
+
+- **Feature Branches**: Isolated development
+- **Conventional Commits**: Standardized commit messages
+- **Code Reviews**: Mandatory peer reviews
+- **CI/CD**: Automated testing and deployment
+
+## 🧪 Testing & Quality
+
+### Performance Testing
+
+```bash
+# Run Lighthouse audit
+npm run lighthouse
+
+# Analyze bundle size
+npm run analyze
+
+# Check dependencies
+npm run depcheck
+```
+
+### Code Quality
+
+- **ESLint**: Static code analysis
+- **Type Checking**: TypeScript support
+- **Performance Monitoring**: Core Web Vitals
+
+## 🚀 Deployment
+
+### Build Commands
+
+```bash
+# Development
+npm run dev
+
+# Production build
+npm run build
+
+# Production server
+npm start
+
+# Linting
+npm run lint
+```
+
+### Environment Setup
+
+- **Development**: Hot reload, source maps
+- **Production**: Optimized build, minification
+- **Docker**: Containerized deployment support
+
+## 📈 Performance Metrics
+
+### Target Metrics
+
+- **LCP**: < 2.5 seconds
+- **FID**: < 100 milliseconds
+- **CLS**: < 0.1
+
+### Optimization Results
+
+- **Bundle Size**: Optimized with code splitting
+- **Image Loading**: WebP/AVIF with lazy loading
+- **Video Performance**: Intersection Observer loading
+
+## 🔍 Troubleshooting
+
+### Common Issues
+
+#### Video Loading
+
+- Check file paths and formats
+- Verify browser codec support
+- Test autoplay policies
+
+#### Performance
+
+- Run Lighthouse audits
+- Check bundle analyzer
+- Verify image optimization
+
+#### Styling
+
+- Check Tailwind purging
+- Verify responsive breakpoints
+- Test cross-browser compatibility
+
+## 📚 Documentation
+
+- **[Complete Project Documentation](./PROJECT_DOCUMENTATION.md)**: Comprehensive technical documentation
+- **Component API**: Component usage and props documentation
+- **Performance Guide**: Optimization techniques and best practices
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## 📄 License
+
+This project is proprietary and confidential.
+
+## 📞 Support
+
+For technical support or questions:
+
+- **Technical Lead**: [Contact Information]
+- **Project Manager**: [Contact Information]
+- **Documentation**: See PROJECT_DOCUMENTATION.md
+
+---
+
+**Built with ❤️ using Next.js, React, and Tailwind CSS**
