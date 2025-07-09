@@ -5,7 +5,6 @@ import {
   ContactSection,
   AutomotiveSection,
 } from "@/components";
-import MotionTabs from "@/components/Tabs";
 
 export default function Home() {
   return (

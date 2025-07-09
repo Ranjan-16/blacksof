@@ -2,7 +2,6 @@
 const nextConfig = {
   // Performance optimizations
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ["swiper", "lucide-react"],
   },
 
@@ -64,8 +63,8 @@ const nextConfig = {
 
   // Webpack optimizations
   webpack: (config, { dev, isServer }) => {
-    // Production optimizations
-    if (!dev) {
+    // Simple optimization for production
+    if (!dev && !isServer) {
       config.optimization.splitChunks = {
         chunks: "all",
         cacheGroups: {
@@ -74,20 +73,12 @@ const nextConfig = {
             name: "vendors",
             chunks: "all",
           },
-          swiper: {
-            test: /[\\/]node_modules[\\/]swiper[\\/]/,
-            name: "swiper",
-            chunks: "all",
-          },
         },
       };
     }
 
     return config;
   },
-
-  // Output optimization
-  output: "standalone",
 
   // Power optimizations
   poweredByHeader: false,

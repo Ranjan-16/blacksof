@@ -2,7 +2,18 @@
 
 import React, { useRef } from "react";
 import Carousel from "../common/Carousel";
-import { AutoMotiveDesktop } from "../AutoMotiveDesktop";
+import dynamic from "next/dynamic";
+
+// Dynamically import AutoMotiveDesktop to avoid SSR issues
+const AutoMotiveDesktop = dynamic(
+  () => import("../AutoMotiveDesktop").then((mod) => mod.AutoMotiveDesktop),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="hidden lg:block h-96 animate-pulse bg-gray-800 rounded-lg" />
+    ),
+  }
+);
 
 const AutomotiveSection = () => {
   const videoData = {
