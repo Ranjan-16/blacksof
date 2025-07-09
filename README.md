@@ -7,6 +7,12 @@
 
 A modern, high-performance automotive solutions website showcasing advanced NVH (Noise, Vibration, and Harshness) solutions and soft trims for seamless vehicle experiences.
 
+## 🌐 Live Demo
+
+**🚀 [View Live Website](https://blacksof-ranjan-16s-projects.vercel.app/)**
+
+Experience the full interactive automotive showcase with video demonstrations, responsive design, and performance optimizations.
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -210,7 +216,6 @@ src/
 - **Conventional Commits**: Standardized commit messages
 - **Code Reviews**: Mandatory peer reviews
 - **CI/CD**: Automated testing and deployment
-
 
 ### Code Quality
 
