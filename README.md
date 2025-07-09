@@ -211,20 +211,6 @@ src/
 - **Code Reviews**: Mandatory peer reviews
 - **CI/CD**: Automated testing and deployment
 
-## 🧪 Testing & Quality
-
-### Performance Testing
-
-```bash
-# Run Lighthouse audit
-npm run lighthouse
-
-# Analyze bundle size
-npm run analyze
-
-# Check dependencies
-npm run depcheck
-```
 
 ### Code Quality
 
@@ -291,12 +277,6 @@ npm run lint
 - Check Tailwind purging
 - Verify responsive breakpoints
 - Test cross-browser compatibility
-
-## 📚 Documentation
-
-- **[Complete Project Documentation](./PROJECT_DOCUMENTATION.md)**: Comprehensive technical documentation
-- **Component API**: Component usage and props documentation
-- **Performance Guide**: Optimization techniques and best practices
 
 ## 🤝 Contributing
 
