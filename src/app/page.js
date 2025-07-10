@@ -12,8 +12,8 @@ export default function Home() {
       <Header />
       <main>
         <HeroVideoSection />
-        <ContactSection />
         <AutomotiveSection />
+        <ContactSection />
       </main>
       <Footer />
     </>
